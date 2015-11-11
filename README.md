@@ -15,7 +15,7 @@ High level overview of new/current tools and technologies used in front-end web 
 - Communication (Slack, HipChat)
 
 ### The Command Line (or Command Prompt if in Windows)
-I don't really use Windows Command Prompt (DOS) much anymore, so my skills are limited there.  I know how to do some basic commands but, they aren't listed here because they're explained pretty well [here](http://www.computerhope.com/issues/chusedos.htm)
+I don't really use Windows Command Prompt (DOS) much anymore, so my skills are limited there.  I know how to do some basic commands but, they aren't listed here because they're explained pretty well [here](http://www.computerhope.com/issues/chusedos.htm).
 
 #### Basic Commands (Unix)
 - `ls` <- List files in a directory (excludes hidden files)
