@@ -30,14 +30,14 @@ I don't really use Windows Command Prompt (DOS) much anymore, so my skills are l
 - `rm -rf` <- Delete folder and all it's contents (`-rf` flag means to recursively delete files)
 
 #### The 'root' user
-Occasionally, you'll encounter permissions errors.  These usually looks something like, `EACCESS blah blah blah`.  There are two easy ways and one hard way to fix this.
+Occasionally, you'll encounter permissions errors.  These usually looks something like, `EACCESS blah blah blah`.  There are two easy ways and one hard way to fix this:
 
 ##### Easy
-- `sudo` <- Type this before whatever command gives you the permissions error, then type your computer's administrator password (You won't see the password as you're typing but, it's there).  Your computer will recognize you as the root user for a limited time after you use the `sudo` command.  *If you want to repeat a command but use `sudo`, type `sudo !!`.
+- `sudo` <- Type this before whatever command gives you the permissions error, then type your computer's administrator password (you won't see the password as you're typing but, it's there).  Your computer will recognize you as the root user for a limited time after you use the `sudo` command.  *If you want to repeat a command but use `sudo`, type `sudo !!`.
 - `sudo su` <- Type this without any other command to login as the root user and stay logged in as long as your Terminal session is open or until you type `exit`.  Be careful because it leaves you all kinds of vulnerable.  Your prompt path will change when you're logged in as the root user.
 
 ##### Hard
-Give your user full rights and privileges on your computer.  This is kind of like permanently enablilng `sudo su` for your user.  It's not the easiest in the word to get set on a mac.  There are plenty of tutorials that tell you different ways to do it so, if you want to go down that path, go for it.
+Give your user full rights and privileges on your computer.  This is kind of like permanently enablilng `sudo su` for your user.  It's not the easiest in the world to get set on a mac.  There are plenty of tutorials that tell you different ways to do it so, if you want to go down that path, google it.
 
 Typically, I do everything in my power not to use `sudo` and only use it when required.  Whenever possible, I don't install applications using `sudo` because I don't want to have to log in as the root user everytime I use that application.
 
