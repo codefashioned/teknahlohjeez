@@ -4,7 +4,7 @@ Mac-centric, high level overview of new/current tools and technologies used in f
 
 ## Items covered here:
 - The Command Line
-- Node & NPM & the `n` Package
+- Node, NPM, and the `n` Package
 - Taskrunners (Grunt/Gulp/NPM Scripts)
 - Static Site Generators (Jekyll)
 - Project Generators (Yeoman)
@@ -37,19 +37,19 @@ Occasionally, you'll encounter permissions errors.  These usually looks somethin
 - `sudo su` <- Type this without any other command to login as the root user and stay logged in as long as your Terminal session is open or until you type `exit`.  Be careful because it leaves you all kinds of vulnerable.  Your prompt path will change when you're logged in as the root user.
 
 ##### Hard
-Give your user full rights and privileges on your computer.  This is kind of like permanently enablilng `sudo su` for your user.  It's not the easiest in the world to get set on a mac.  There are plenty of tutorials that tell you different ways to do it so, if you want to go down that path, google it.
+Give your user full rights and privileges on your computer.  This is kind of like permanently enabling `sudo su` for your user.  It's not the easiest in the world to get set on a mac.  There are plenty of tutorials that tell you different ways to do it so, if you want to go down that path, google it.
 
 Typically, I do everything in my power not to use `sudo` and only use it when required.  Whenever possible, I don't install applications using `sudo` because I don't want to have to log in as the root user everytime I use that application.
 
-#### `PATH`
+#### `$PATH`
 Scenario: You are in `/MyComputer/MyName/`.  In `/MyComputer/MyName/` there is a program called `awesome.app` that has a command line interface tool called 'awesome'.  You change directories `cd Sites` so that you're now in `/MyComputer/MyName/Sites`.  You list the files `ls -a` and see a file called `ohmanthisis.awesome`.  You run the file `awesome ohmanthisis.awesome` but get an error that your computer can't find `awesome`.  That's because the context of your command is your current working directory, which doesn't include the `awesome` app.  To run your command, you need to type `/MyComputer/MyName/awesome ohmanthisis.awesome` or something much more convoluted depending on where the `awesome` command line tool is actually installed.
 
-This is where PATH comes in.  You can set a PATH for `awesome` so that no matter where you are in the file system, whenever you ask `awesome` to do something, the computer uses the PATH that you set for it.
+This is where $PATH comes in.  You can set a $PATH for `awesome` so that no matter where you are in the file system, whenever you ask `awesome` to do something, the computer uses the $PATH that you set for it.
 
 #### Some lingo
 - 'cwd' <- Current Working Directory
 
-### Node & NPM
+### Node, NPM, and the `n` package
 
 #### Node
 [Node.js](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
@@ -67,10 +67,12 @@ This is where PATH comes in.  You can set a PATH for `awesome` so that no matter
 ###### This (this is the way I do it but, I'm anti-homebrew for no good reason)
 - Head over to [the node.js website](https://nodejs.org/en/) and download the latest stable installer package.
 - Install node :)
-- Optional: You might need to add node to your PATH.  You can do that by opening Terminal and typing `open -a 'YourFavoriteTextEditor.app' .` and adding `/local/node/bin:` to your PATH.  If you don't have a PATH setup already, look [here](http://dandean.com/nodejs-npm-express-osx/) for more details.
+- Optional: You might need to add node to your $PATH.  You can do that by opening Terminal and typing `open -a 'YourFavoriteTextEditor.app' .` and adding `/local/node/bin:` to your $PATH.  If you don't have a $PATH setup already, look [here](http://dandean.com/nodejs-npm-express-osx/) for more details.
 
 ###### or That
 If you have [homebrew](http://brew.sh/) installed, from the command line type `brew install node`.
+
+One advantage of using homebrew is that you avoid using `sudo` to install node.
 
 There's a great, detailed tutorial how to set this up on [the treehouse site](http://blog.teamtreehouse.com/install-node-js-npm-mac).
 
@@ -107,7 +109,7 @@ Example - Install a specific package and save it as a development dependency: `n
 
 ##### Installation
 No installation necessary.  NPM comes with node.  NOTE: If you accidentally delete NPM, you'll need to reinstall Node to get it back.  Node is pretty much useless without NPM unless you are a Gandalf the Gray or David Bowie from Labrynth.
----------------------
+
 #### The `n` package
 [Node Version Manager](https://www.npmjs.com/package/n).  `n` gives you the ability to switch quickly between versions of Node.
 
