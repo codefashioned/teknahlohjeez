@@ -49,7 +49,8 @@ Scenario: You are in `/MyComputer/MyName/`.  In `/MyComputer/MyName/` there is a
 This is where $PATH comes in.  You can set a $PATH for `awesome` so that no matter where you are in the file system, whenever you ask `awesome` to do something, the computer uses the $PATH that you set for it.
 
 #### Some lingo
-- 'cwd' <- Current Working Directory
+- 'CWD' <- Current Working Directory
+- 'CLI' <- Command Line Interface
 
 ### Node, NPM, and the `n` package
 
@@ -194,6 +195,48 @@ Example `.bowerrc` file:
   "directory": "vendor"
 }
 ```
+
+### Taskrunners (Grunt, Gulp, NPM Scripts)
+In one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes.  A task runner can do most of that mundane work for you—and your team—with basically zero effort.
+
+#### Grunt
+[Grunt](http://gruntjs.com/) is a taskrunner built on javascript with a heavy focus on configuration over code.  It uses a json Gruntfile to configure tasks installed by npm.
+
+##### Installation & Setup
+To use Grunt, you need the Grunt CLI (Command Line Interface).  Fortunately, it's available from npm `npm install -g grunt-cli`.  This will put the grunt command in your system path, allowing it to be run from any directory.  This does not install the taskrunner itself but, enables the task runner to communicate with your computer.
+
+##### Usage
+- `npm install grunt --save-dev` <- Install Grunt and save it to your `package.json` file
+- Create `Gruntfile.json` and configure tasks.
+
+Example `Gruntfile.json` file:
+```
+module.exports = function(grunt) {
+
+  // Project configuration.
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      build: {
+        src: 'src/<%= pkg.name %>.js',
+        dest: 'build/<%= pkg.name %>.min.js'
+      }
+    }
+  });
+
+  // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  // Default task(s).
+  grunt.registerTask('default', ['uglify']);
+
+};
+```
+
+- `grunt *` where `*` is the name of the task you want to run
 
 -------------------------------
 
