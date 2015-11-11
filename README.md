@@ -195,10 +195,6 @@ Example `.bowerrc` file:
 }
 ```
 
-### Bundler
-
-
-
 -------------------------------
 
 ## Project Setup
