@@ -1,6 +1,6 @@
 # teknahlohjeez
 
-High level overview of new/current tools and technologies used in front-end web development
+Mac-centric, high level overview of new/current tools and technologies used in front-end web development.
 
 ## Items covered here:
 - The Command Line
@@ -51,22 +51,44 @@ This is where PATH comes in.  You can set a PATH for `awesome` so that no matter
 
 ### Node & NPM
 
-
 #### Node
-
-##### What is it?
+[Node.js](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
 
 ##### Why node?
+- Designed to build fast, event-driven, scalable network applications
+- JavaScript
+- Non-blocking
 
 ##### Installation
-nodejs.org or homebrew
 
+###### Prerequisites
+- XCode
+
+###### This (this is the way I do it but, I'm anti-homebrew for no good reason)
+- Head over to [the node.js website](https://nodejs.org/en/) and download the latest stable installer package.
+- Install node :)
+- Optional: You might need to add node to your PATH.  You can do that by opening Terminal and typing `open -a 'YourFavoriteTextEditor.app' .` and adding `/local/node/bin:` to your PATH.  If you don't have a PATH setup already, look [here](http://dandean.com/nodejs-npm-express-osx/) for more details.
+
+###### or That
+If you have [homebrew](http://brew.sh/) installed, from the command line type `brew install node`.
+
+There's a great, detailed tutorial how to set this up on [the treehouse site](http://blog.teamtreehouse.com/install-node-js-npm-mac).
+
+##### Basics (the bare minimum)
+You don't really need to know much about node to use it - or npm, for that matter.  What's important is that you know how to check what version you're using and that you understand npm.
+
+You can check what version you're using with `node -v`.  This is helpful for two reasons: 1. Checking to see what version of node you have installed.  2. Checking to see if node is installed.  TIP: You can use the `-v` flag on all sorts of applications to find out what version you're using.
+
+##### Going further
+If you want to learn more, I highly recommended a visit to [nodeschool.io](http://nodeschool.io/).  Complete the learnyounode `npm install -g learnyounode` tutorial.
 
 #### NPM
-
-##### What is it?
+Node.js' package ecosystem, [npm](https://www.npmjs.com/), is the largest ecosystem of open source libraries in the world.
 
 ##### Why NPM?
+- Quick, easy way to install node packages (like plugins) in your project without worrying about dependencies.
+- Find pretty much anything you want
+- Save time and energy by using other people's work
 
 ##### `package.json`
 
@@ -86,17 +108,18 @@ Example - Install a specific package and save it as a development dependency: `n
 ##### Installation
 No installation necessary.  NPM comes with node.  NOTE: If you accidentally delete NPM, you'll need to reinstall Node to get it back.  Node is pretty much useless without NPM unless you are a Gandalf the Gray or David Bowie from Labrynth.
 
-
 #### The `n` package
-
-##### What is it?
-`n` gives you the ability to switch quickly between versions of Node.
+[Node Version Manager](https://www.npmjs.com/package/n).  `n` gives you the ability to switch quickly between versions of Node.
 
 ##### Why `n`?
 It's helpful when you're working on a project with outdated dependencies (like if you need to use a plugin/package that doesn't support the current Node version) and you need to run an old version of Node.
 
 ##### Installation
 Once you have Node (and consequently NPM) installed, from the command line type, `npm install -g n`
+A list of node versions for install can be found [here](https://nodejs.org/docs/)
+
+##### Usage
+Type `n` from the command line, use your keyboard arrows to choose which version of node you want to run, and hit the `return` key.
 
 ## Project Setup
 This project utilizes Playbook, reference Playbook's [setup guide](https://github.com/centresource/generator-playbook#get-started).
