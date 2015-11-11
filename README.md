@@ -107,7 +107,7 @@ Example - Install a specific package and save it as a development dependency: `n
 
 ##### Installation
 No installation necessary.  NPM comes with node.  NOTE: If you accidentally delete NPM, you'll need to reinstall Node to get it back.  Node is pretty much useless without NPM unless you are a Gandalf the Gray or David Bowie from Labrynth.
-
+---------------------
 #### The `n` package
 [Node Version Manager](https://www.npmjs.com/package/n).  `n` gives you the ability to switch quickly between versions of Node.
 
