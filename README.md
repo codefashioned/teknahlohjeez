@@ -5,6 +5,8 @@ Mac-centric, high level overview of new/current tools and technologies used in f
 ## Items covered here:
 - The Command Line
 - Node, NPM, and the `n` Package
+- Bower (non-node package manager)
+- Bundler (Ruby package manager)
 - Taskrunners (Grunt/Gulp/NPM Scripts)
 - Static Site Generators (Jekyll)
 - Project Generators (Yeoman)
@@ -93,8 +95,42 @@ Node.js' package ecosystem, [npm](https://www.npmjs.com/), is the largest ecosys
 - Save time and energy by using other people's work
 
 ##### `package.json`
+Create a `package.json` file by running `npm init`.  Anytime you install a local npm package with a `--save` or `--save-dev` flag, it gets installed *and* written to the `package.json` file.  At the end of the day, the most important thing to know about `package.json` is that running `npm install` by itself tells npm to look for `package.json` and install all listed dependencies.
 
-##### Common NPM actions/flags
+Example `package.json` file:
+```
+{
+  "private": true,
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^1.9.1",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.4.3",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-htmlmin": "^1.0.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.1.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-minify-css": "^0.4.3",
+    "gulp-replace": "^0.5.3",
+    "gulp-rev": "^3.0.1",
+    "gulp-rev-replace": "^0.3.4",
+    "gulp-sass": "^1.3.2",
+    "gulp-size": "^1.2.0",
+    "gulp-uglify": "^1.1.0",
+    "gulp-useref": "^1.1.1",
+    "node-neat": "^1.7.1-beta1",
+    "run-sequence": "^1.0.2"
+  }
+}
+```
+
+##### Usage
 - `npm` <- Everything you write after this is what you are asking npm to do
 - `install` <- Install an NPM package
 - `npm install` <- Without any flags or specific package listed, this installs everything listed in `package.json`
@@ -122,6 +158,48 @@ A list of node versions for install can be found [here](https://nodejs.org/docs/
 
 ##### Usage
 Type `n` from the command line, use your keyboard arrows to choose which version of node you want to run, and hit the `return` key.
+
+### Bower
+Bower works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you’re looking for.
+
+#### Installation
+Install Bower globally `npm install -g bower`
+
+#### Usage
+`bower install *` where `*` is the name of the package you want to install.  <- Install a single package locally.
+`bower install` <- Looks for a `bower.json` file (like npm's `package.json`) and installs all packages listed there.
+
+Example `bower.json` file:
+```
+{
+  "name": "teknahlohjeez",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "~2.8.3"
+  },
+  "devDependencies": {
+    "normalize-css": "~3.0.2",
+    "jquery": "~2.1.3"
+  }
+}
+
+```
+
+##### `bower_components` and `.bowerrc`
+By default, bower installs packages into a `bower_components` directory.  You can override this default by creating a `.bowerrc` file and pointing to a directory of your choosing.
+
+Example `.bowerrc` file:
+```
+{
+  "directory": "vendor"
+}
+```
+
+### Bundler
+
+
+
+-------------------------------
 
 ## Project Setup
 This project utilizes Playbook, reference Playbook's [setup guide](https://github.com/centresource/generator-playbook#get-started).
